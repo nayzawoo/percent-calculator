@@ -1,1 +1,69 @@
-Hello
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script src="vue.global.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+           <br>
+            <h1>Percent Calculator</h1>
+          <div id="app">
+            <input type="text" v-model="all" class="form-control" />
+
+            <br /><br />
+
+            <table class="table table-bordered table-striped">
+              <tbody>
+                <tr>
+                  <td>ဆန်</td>
+                  <td>{{ Math.round((all/100) * 71.42) }}</td>
+                </tr>
+                <tr>
+                    <td>ကောက်ညှင်း</td>
+                    <td>{{ Math.round((all/100) * 22.3214 ) }}</td>
+                    <td>{{ kaut_nynn }}</td>
+                </tr>
+               <tr>
+                <td>ပဲမှုန့်</td>
+                <td>{{ Math.round((all/100) *  6.25 ) }}</td>
+               </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+
+  <script>
+    const { createApp, ref } = Vue;
+
+    const app = createApp({
+      data() {
+        return {
+          all: 0,
+        };
+      },
+
+    });
+
+    app.mount("#app");
+  </script>
+</html>
